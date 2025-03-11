@@ -27,3 +27,13 @@ spec:
             requests:
               cpu: {{ .Values.resources.requests.cpu }}
               memory: {{ .Values.resources.requests.memory }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /test-cm
+      volumes:
+        - name: config-volume
+          configMap:
+            name: {{ include "bf-app-02.fullname" . }}-config
+            items:
+              - key: REDIS_HOST
+                path: connections.txt
