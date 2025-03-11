@@ -1,4 +1,4 @@
-# Default values for bf-app-01
+# Default values for dc-app-01
 # These values will be overridden by environment-specific values files
 
 replicaCount: 1
@@ -23,4 +23,8 @@ command:
 
 service:
   type: ClusterIP
-  port: 80
+  port: 80 
+
+# Environment-specific configurations (redis, kafka) have been moved to:
+# - values-dev.yaml: Development environment configuration
+# - values-qa.yaml: QA environment configuration 

@@ -1,8 +1,11 @@
+# Default values for dc-app-01
+# These values will be overridden by environment-specific values files
+
 replicaCount: 1
 
 image:
   repository: alpine
-  tag: "3.19"
+  tag: "3.19"  # This will be overridden by environment-specific tag
   pullPolicy: IfNotPresent
 
 resources:
@@ -20,4 +23,8 @@ command:
 
 service:
   type: ClusterIP
-  port: 80
+  port: 80 
+
+# Environment-specific configurations (redis, kafka) have been moved to:
+# - values-dev.yaml: Development environment configuration
+# - values-qa.yaml: QA environment configuration 
