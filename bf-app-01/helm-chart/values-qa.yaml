@@ -1,0 +1,6 @@
+# Default values for bf-app-01
+# These values will be overridden by environment-specific values files
+
+redis-url: qa-redis:5000
+api-client-id: qa-api-client-id
+api-client-secret: qa-api-client-secret
